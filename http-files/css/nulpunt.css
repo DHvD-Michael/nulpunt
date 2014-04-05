@@ -35,18 +35,26 @@ a:link, a:visited, a:active {
 	   color: #000;
 	   text-decoration: none;
 }
+a{
+	color:#000;
+}
 a:hover {
-	color:#222;
+	color:#999;
 }
 
 /*heading styles*/
 h1 {
-	font-size:28px;
+	font-size:30px;
 }
 h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 	line-height: 1;
 	text-shadow: 0px 1px 0px rgba(255, 255, 255, 1);
 	letter-spacing: -0.03em;
+}
+
+h1, h2, h3 {
+margin-top: 0px;
+margin-bottom: 20px;
 }
 
 /*bootstrap overrides*/
@@ -56,15 +64,15 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 }
 
 .row-padding-bottom {
-	padding-bottom: 10px;
+	padding-bottom: 20px;
 }
 .row-padding-top {
-	padding-top: 10px;
+	padding-top: 20px; 
 }
 
 /*annotation and document related styles*/
 .annotation {
-		background-color: #f7f7f7;
+		background-color: #FFF;
 		padding: 14px 14px 0 14px;
 		font-size: 12px; 
 }
@@ -76,16 +84,17 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 		font-size: 1.35em;line-height: 1;
 }
 
-.source, .upload, .request {
+.source, .upload, .request, .uploader, .date-document-source, .annotator-metadata, .tags-metadata {
 		display: block;
-		font-size: 11px;
-		line-height:13px;
+		font-size: 12px;
+		line-height:14px;
 }
 
 .label-default {
 		margin-right: 4px;
 		background-color: #000;
-		padding:.3em .5em .3em;
+		padding:.25em;
+		font-size: 65%;
 }
 
 .document-type {
@@ -105,33 +114,94 @@ p.intro {
 
 .navbar {
 	margin-bottom:0px;
+	border: 0px !important;
+}
+.col-leftedge{
+	margin-left: -30px;
 }
 
 .navbar-brand {	
-		padding: 10px 15px;
-		height:60px;
+		padding: 5px 15px;
+		height:50px;
+}
+.navbar-brand-small {	
+		padding: 5px;
+		height:20px;
 }
 .navbar .btn {
-	margin-top: 13px;
+	margin-top: 8px;
 }
 
-.masthead {
-        background: #eee;
-        -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.2);
-        -moz-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.2);
-        box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.2);
-        margin-bottom: 15px;
-        z-index: 1020;
-        margin-left: 0;
-        margin-right: 0;
-        padding-bottom: 15px;
+.fixed {
+	position: fixed !important;
+	width: 100%;
+	top: 0px;
 }
-.navbar-static-top {
-        -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.2);
+.fixed-subnav {
+	position: fixed !important;
+	width: 100%;
+	background-color: #FFF;
+	top:50px;
+	z-index: 100;
+}
+.fixed-docview{
+	position: fixed !important;
+	width: 100%;
+	height: 500px;
+	background-color: #FFF;
+	top:100px;
+	overflow-y: scroll;
+	overflow-x: hidden;
+	padding-top: 100px;
+}
+.masthead {
+        background: #FFF;
+        z-index: 1020;
+        margin: 50px 0 15px 0;
+}
+.metadata-doc{
+	margin: 20px 0;
+}
+.annotator-metadata{
+	margin-bottom: 20px;
+}
+.annotate-alert{
+	margin-top: -10px;
+}
+.annotationView {
+	border-top: 1px solid #AAA;
+	margin: 5px 0;
+	overflow-x: hidden;
+	overflow-y: hidden;
+}
+.masthead-bottom{
+	    -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.2);
         -moz-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.2);
         box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.2);
+        padding: 10px 0px;
+}
+.nav>li>a {
+	position: relative;
+	display: block;
+	padding: 10px;
+	margin-left: 20px;
+}
+
+.navbar-static-top {
+        /*-webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.2);
+        -moz-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.2);
+        box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.2);*/
         margin-bottom: 0px;
         z-index: 1050;
+        background-color: white;
+}
+.navbar-line{
+	    -webkit-box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.2);
+        -moz-box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.2);
+        box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.2);
+}
+.document-description:empty, .annotator-metadata:empty, .tags-metadata:empty{
+	display: none;
 }
 .document h3 {
 	font:14px Arial,sans-serif;font-weight: bold;
@@ -151,7 +221,8 @@ p.intro {
 }
 
 .np-main-content {
-	margin-bottom: 120px;
+	padding-bottom: 60px;
+	background-color: #EEE;
 }
 
 div.np-tagline {
@@ -159,10 +230,11 @@ div.np-tagline {
 	width: 300px;
 	margin-left: auto;
 	margin-right: auto;
+	height: 35px;
 }
 div.np-tagline p {
 	color: #ffffff;
-	padding: 5px;
+	padding: 10px;
 	text-align: center;
 }
 
@@ -199,10 +271,22 @@ div.np-tagline p {
 	display: block;
 	float: left;
 	padding: 3px 5px;
-	background-color: #d9d9d9;
+	background-color: #000;
 	margin-right: 5px;
 	margin-bottom: 5px;
 	border-radius: 4px;
+}
+.np-document-tag-small {
+	display: block;
+	float: left;
+	padding: 2px 5px;
+	background-color: #000000;
+	margin-right: 5px;
+	margin-bottom: 5px;
+	border-radius: 3px;
+	color: white;
+	font-size: 10px;
+	letter-spacing: 0.5px;
 }
 .np-open-document {
 	float: right;
@@ -221,6 +305,9 @@ div.np-tagline p {
 .np-remove-padding-lr {
 	padding-left: 0;
 	padding-right: 0;
+}
+.nav-pills {
+margin-left: -6px;
 }
 
 .nav-tabs {
@@ -264,16 +351,19 @@ div.np-tagline p {
 #np-wrap {
   min-height: 100%;
   height: auto;
-  margin: 0 auto -60px;
-  padding: 0 0 60px;
+  /*margin: 0 auto -60px; 
+  padding: 0 0 60px;*/
 }
 
 #np-footer {
-  height: 60px;
+  height: 35px;
   background-image:none;
-  background-color:#eee;
+  background-color:#FCFCFC;
   border:0;
   border-radius:0px;
+  position:fixed;
+  bottom:0;
+  width:100%;
 }
 
 .np-selected {
@@ -304,8 +394,10 @@ ul.features {
 	-webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.2);
     -moz-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.2);
     box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.2);
-    border-radius:4px;
+    border-radius:3px;
     text-shadow:none;
+    padding: 5px 10px;
+    font-size: 12px;
 }
 
 .nav > li > a:hover,
@@ -335,9 +427,9 @@ ul.features {
 .form-control {
 	height:40px;
 	border:0;
-	-webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.2);
-	-moz-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.2);
-	box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.2);
+	-webkit-box-shadow: -1px -1px 1px 1px rgba(0, 0, 0, 0.2);
+	-moz-box-shadow: -1px -1px 1px 1px rgba(0, 0, 0, 0.2);
+	box-shadow: -1px -1px 1px 1px rgba(0, 0, 0, 0.2);
 }
 
 .form-group {
@@ -365,23 +457,34 @@ a.custom-tweet-button {
 
 .masthead.document-viewer {
 	padding-top:15px;
+	margin-top: 30px;
+}
+.container.document-viewer.ng-scope {
+	margin-top: 30px;
 }
 
 /* Temporary: navbar menu height fix */
 #np-footer .navbar-nav>li>a {
-	padding-top: 20px;
-	padding-bottom: 20px;
+	/*padding-top: 20px;
+	padding-bottom: 20px; */
 }
 
+.pagenumber-position {
+margin-top: 6px;
+font-size: 10pt;
+}
 
 .np-document-viewer-pagination {
 	font-size:12px;
 	height:auto;
 	padding:1px 5px;
 	line-height:1.5;
-	width: 5em;
+	width: 3em;
 }
-
+.np-logo-small {
+	height:20px;
+	margin: 8px 20px;
+}
 .np-logo-text-background {
 	fill:#FF0;
 }
@@ -390,4 +493,24 @@ a.custom-tweet-button {
 	zoom: 1;
 	filter: alpha(opacity=60);
 	opacity: 0.6;
+}
+
+.about-nulpunt {
+	padding: 20px;
+}
+
+.uppercase {
+	text-transform: uppercase;
+}
+
+.signup-text{
+	margin-right: 20px;
+}
+
+.trending {
+	padding-top: 10px;
+}
+.trending-item {
+	margin-top:20px;
+	margin-bottom:20px;
 }

@@ -18,3 +18,7 @@
 
 *.rice-box.go
 .idea
+
+.project
+
+ritchy@nulpunt
